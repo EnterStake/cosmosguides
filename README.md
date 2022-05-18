@@ -1,4 +1,4 @@
-# all
+# 
 Commands to replace the addrbook file
 #
 systemctl stop quicksilverd
