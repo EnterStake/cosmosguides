@@ -1,6 +1,6 @@
-###
+##
 Commands to replace addrbook file in Quicksilver testnet
-###
+##
 
 systemctl stop quicksilverd
 rm $HOME/root/.quicksilverd/config/addrbook.json
