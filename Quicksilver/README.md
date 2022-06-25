@@ -1,6 +1,6 @@
 #
 Commands to replace addrbook file in Quicksilver testnet
-#
+# 
 
 ```sh
 systemctl stop quicksilverd
