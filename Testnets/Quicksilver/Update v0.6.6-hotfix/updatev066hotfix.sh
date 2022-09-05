@@ -5,7 +5,7 @@ if ((height>=226627)); then
         cd $HOME
         sudo systemctl stop quicksilverd
         rm quicksilver -rf
-        git clone https://github.com/ingenuity-build/quicksilver.git --branch v0.6.6-hotfix
+        git clone https://github.com/ingenuity-build/quicksilver.git --branch v0.6.6-hotfix.2
         cd quicksilver
         make build
         sudo chmod +x ./build/quicksilverd && sudo mv ./build/quicksilverd /usr/local/bin/quicksilverd
