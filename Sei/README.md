@@ -1,6 +1,6 @@
-#
-Commands to replace addrbook file in Sei Network testnet
-#
+##
+**Commands to replace addrbook file in Sei Network testnet**
+##
 
 ```sh
 systemctl stop seid
