@@ -1,6 +1,6 @@
-#
+##
 Quicksilver v0.6.6-hotfix Upgrade (innuendo1)
-# 
+##
 A countdown clock is [here](https://quicksilver.explorers.guru/block/226627)
 ```bash
 sudo systemctl stop quicksilverd
