@@ -13,7 +13,7 @@ sudo chmod +x ./build/quicksilverd && sudo mv ./build/quicksilverd /usr/local/bi
 
 #Check version
 quicksilverd version
-should be v0.6.6-hotfix
+#should be v0.6.6-hotfix
 
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```
