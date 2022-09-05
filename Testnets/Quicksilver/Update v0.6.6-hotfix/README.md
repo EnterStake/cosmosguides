@@ -24,6 +24,7 @@ sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```bash
 wget https://raw.githubusercontent.com/EnterStake/cosmosguides/main/Testnets/Quicksilver/Update%20v0.6.6-hotfix/updatev066hotfix.sh
 chmod 700 updatev066hotfix.sh
+tmux
 ./updatev066hotfix.sh
 
 ```
