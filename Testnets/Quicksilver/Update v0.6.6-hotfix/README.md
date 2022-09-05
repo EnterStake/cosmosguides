@@ -14,12 +14,12 @@ sudo chmod +x ./build/quicksilverd && sudo mv ./build/quicksilverd /usr/local/bi
 
 #Check version
 quicksilverd version
-#should be v0.6.6-hotfix
+#should be v0.6.6-hotfix.2
 
 sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 ```
 
- **Auto upgrade Quicksilverto v0.6.6-hotfix**
+ **Auto upgrade Quicksilverto v0.6.6-hotfix.2**
  
 ```bash
 wget https://raw.githubusercontent.com/EnterStake/cosmosguides/main/Testnets/Quicksilver/Update%20v0.6.6-hotfix/updatev066hotfix.sh
