@@ -12,3 +12,4 @@ wget -O $HOME/.quicksilverd/config/addrbook.json "https://raw.githubusercontent.
 systemctl restart quicksilverd && journalctl -u quicksilverd -f -o cat
 ```
  
+ 
