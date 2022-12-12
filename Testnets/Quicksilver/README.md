@@ -2,7 +2,7 @@
 
 
 #
-Commands to replace addrbook file in Quicksilver testnet (innuendo1)
+Commands to replace addrbook file in Quicksilver testnet (innuendo4)
 # 
 
 ```sh
