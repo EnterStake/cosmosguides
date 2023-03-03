@@ -92,3 +92,7 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable andromedad 
 sudo systemctl restart andromedad && sudo journalctl -u andromedad -f
+```
+
+
+sudo systemctl stop andromedad
