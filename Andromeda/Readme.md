@@ -96,3 +96,12 @@ sudo systemctl restart andromedad && sudo journalctl -u andromedad -f
 
 
 sudo systemctl stop andromedad
+
+##### Addrbook 
+
+```sh
+systemctl stop andromedad
+rm $HOME/.andromedad/config/addrbook.json
+wget -O $HOME/.andromedad/config/addrbook.json "https://raw.githubusercontent.com/EnterStake/cosmosguides/main/Andromeda/addrbook.json"
+sudo systemctl restart andromedad && sudo journalctl -u andromedad -f
+```
