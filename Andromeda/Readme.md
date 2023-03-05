@@ -86,17 +86,36 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
-```
-##### 8. 
-```sh 
+
+#активируем сервис и делаем reboot
 sudo systemctl daemon-reload
 sudo systemctl enable andromedad 
 sudo systemctl restart andromedad && sudo journalctl -u andromedad -f
 ```
 
-
+##### 8. Быстрая синхронизация с помощью Statesync
+```sh
+http://161.97.148.146:60657
 sudo systemctl stop andromedad
+andromedad tendermint unsafe-reset-all --home $HOME/.andromedad --keep-addr-book 
 
+STATE_SYNC_RPC="http://161.97.148.146:60657"
+
+LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
+SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))
+SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+sed -i \
+  -e "s|^enable *=.*|enable = true|" \
+  -e "s|^rpc_servers *=.*|rpc_servers = \"$STATE_SYNC_RPC,$STATE_SYNC_RPC\"|" \
+  -e "s|^trust_height *=.*|trust_height = $SYNC_BLOCK_HEIGHT|" \
+  -e "s|^trust_hash *=.*|trust_hash = \"$SYNC_BLOCK_HASH\"|" \
+  -e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \
+  $HOME/.andromedad/config/config.toml
+  
+ #Перезагрузка
+sudo systemctl restart andromedad && sudo journalctl -u andromedad -f
+```
 ##### Addrbook 
 
 ```sh
