@@ -154,3 +154,8 @@ rm $HOME/.andromedad/config/addrbook.json
 wget -O $HOME/.andromedad/config/addrbook.json "https://raw.githubusercontent.com/EnterStake/cosmosguides/main/Andromeda/addrbook.json"
 sudo systemctl restart andromedad && sudo journalctl -u andromedad -f
 ```
+
+##### Выкл Statesync
+```sh
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" $HOME/.andromedad/config/config.toml
+```
