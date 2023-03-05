@@ -159,3 +159,11 @@ sudo systemctl restart andromedad && sudo journalctl -u andromedad -f
 ```sh
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" $HOME/.andromedad/config/config.toml
 ```
+##### Проверяем статус
+```sh
+andromedad status | jq
+```
+##### Unjail 
+```sh 
+andromedad tx slashing unjail --from wallet --chain-id galileo-3 --gas-prices 0.1uandr --gas-adjustment 1.5 --gas auto 
+```
