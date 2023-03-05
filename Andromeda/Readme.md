@@ -95,7 +95,7 @@ sudo systemctl restart andromedad && sudo journalctl -u andromedad -f
 
 ##### 8. Быстрая синхронизация с помощью Statesync
 ```sh
-http://161.97.148.146:60657
+
 sudo systemctl stop andromedad
 andromedad tendermint unsafe-reset-all --home $HOME/.andromedad --keep-addr-book 
 
@@ -116,7 +116,37 @@ sed -i \
  #Перезагрузка
 sudo systemctl restart andromedad && sudo journalctl -u andromedad -f
 ```
-##### Addrbook 
+##### Кошелек и валидатор #####
+
+```sh
+#Создаем кошелек и сохраняем SEED PHRASE 
+andromedad keys add wallet
+
+#Также сохраняем priv_validator_key.json
+cat $HOME/.andromedad/config/priv_validator_key.json
+
+# Восстанавливаем кошелек (только, если уже создавали)
+andromedad keys add wallet --recover
+
+#После полной синхронизации создаем валидатора. NODENAME меняем на название вашей ноды
+
+andromedad tx staking create-validator \
+--amount=1000000uandr \
+--pubkey=$(andromedad tendermint show-validator) \
+--moniker=NODENAME \
+--chain-id=galileo-3 \
+--commission-rate=0.1 \
+--commission-max-rate=0.2 \
+--commission-max-change-rate=0.05 \
+--min-self-delegation=1 \
+--fees=10000uandr \
+--from=wallet
+
+```
+### Полезные команды
+
+##### Addrbook #####
+> если есть проблемы с пирами
 
 ```sh
 systemctl stop andromedad
