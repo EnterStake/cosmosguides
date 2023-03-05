@@ -70,7 +70,7 @@ sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.andromedad/config/app.toml
 ```
 
-##### 7. создаем сервис
+##### 7. Создаем сервис
 ```sh 
 tee /etc/systemd/system/andromedad.service > /dev/null <<EOF
 [Unit]
@@ -116,7 +116,7 @@ sed -i \
  #Перезагрузка
 sudo systemctl restart andromedad && sudo journalctl -u andromedad -f
 ```
-##### Кошелек и валидатор #####
+##### 9. Кошелек и валидатор #####
 
 ```sh
 #Создаем кошелек и сохраняем SEED PHRASE 
