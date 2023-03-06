@@ -167,3 +167,15 @@ andromedad status | jq
 ```sh 
 andromedad tx slashing unjail --from wallet --chain-id galileo-3 --gas-prices 0.1uandr --gas-adjustment 1.5 --gas auto 
 ```
+##### Редактируем данные валидатора
+```sh
+andromedad tx staking edit-validator \
+--identity xxxxxxxx \
+--website="xxxxxxxxx" \
+--details="xxxxxxxx" \
+--commission-rate=0.1 \
+--chain-id galileo-3 \
+--gas "auto" \
+--from wallet \
+--fees=10000uandr
+```
