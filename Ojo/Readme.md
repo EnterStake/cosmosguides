@@ -137,7 +137,7 @@ ojod tx staking create-validator \
 --commission-max-rate=0.2 \
 --commission-max-change-rate=0.05 \
 --min-self-delegation=1 \
---fees=10000uojor \
+--fees=10uojo \
 --from=wallet
 
 ```
@@ -175,5 +175,5 @@ ojod tx staking edit-validator \
 --chain-id ojo-devnet \
 --gas "auto" \
 --from wallet \
---fees=10000uojo
+--fees=10uojo
 ```
