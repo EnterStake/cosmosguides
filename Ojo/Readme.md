@@ -181,7 +181,7 @@ ojod tx staking edit-validator \
 ```sh
 ojod q bank balances $(ojod keys show wallet -a)
 ```
-Delegate 10ojo
+Delegate 10ojo (edit ojovaloperxxxxxxx5467fhn06fr6aclrhncp to your valoper)
 ```sh 
 ojod tx staking delegate ojovaloperxxxxxxx5467fhn06fr6aclrhncp 10000000uojo --from wallet --chain-id ojo-devnet --gas-prices 0.1uojo --gas-adjustment 1.5 --gas auto -y 
 ```
