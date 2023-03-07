@@ -129,12 +129,9 @@ ojod keys add wallet --recover
 #Create validator. NODENAME edit to your validator nme
 
 ojod tx staking create-validator \
---amount=1000000000uojo \
+--amount=10000000uojo \
+--moniker=NODENAME \
 --pubkey=$(ojod tendermint show-validator) \
---moniker=Firstcome \
---identity AC6D3F3F77A6768E \
---website="https://firstcome.net" \
---details="Trusted Validator on Proof-of-Stake Blockchains" \
 --chain-id=ojo-devnet \
 --commission-rate=0.1 \
 --commission-max-rate=0.2 \
@@ -183,4 +180,8 @@ ojod tx staking edit-validator \
 ##### Wallet balance
 ```sh
 ojod q bank balances $(ojod keys show wallet -a)
+```
+Delegate 10ojo
+```sh 
+ojod tx staking delegate ojovaloper100qw5qcw6apqjwehl05467fhn06fr6aclrhncp 10000000uojo --from wallet --chain-id ojo-devnet --gas-prices 0.1uojo --gas-adjustment 1.5 --gas auto -y 
 ```
