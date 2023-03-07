@@ -183,5 +183,5 @@ ojod q bank balances $(ojod keys show wallet -a)
 ```
 Delegate 10ojo
 ```sh 
-ojod tx staking delegate ojovaloper100qw5qcw6apqjwehl05467fhn06fr6aclrhncp 10000000uojo --from wallet --chain-id ojo-devnet --gas-prices 0.1uojo --gas-adjustment 1.5 --gas auto -y 
+ojod tx staking delegate ojovaloperxxxxxxx5467fhn06fr6aclrhncp 10000000uojo --from wallet --chain-id ojo-devnet --gas-prices 0.1uojo --gas-adjustment 1.5 --gas auto -y 
 ```
