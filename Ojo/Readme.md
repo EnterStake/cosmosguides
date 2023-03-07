@@ -97,7 +97,7 @@ sudo systemctl restart ojod && sudo journalctl -u ojod -f
 sudo systemctl stop ojod
 ojod tendermint unsafe-reset-all --home $HOME/.ojo --keep-addr-book 
 
-STATE_SYNC_RPC=""
+STATE_SYNC_RPC="http://207.180.243.64:36657"
 
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
 SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))
