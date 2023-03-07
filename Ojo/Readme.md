@@ -177,3 +177,5 @@ ojod tx staking edit-validator \
 --from wallet \
 --fees=10uojo
 ```
+##### Wallet balance
+ojod q bank balances $(ojod keys show wallet -a)
