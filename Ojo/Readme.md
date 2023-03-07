@@ -43,7 +43,7 @@ ojod version
 ##### 4.Init
 ```sh 
 # change NODENAME to your validator name
-ojod init Firstcome --chain-id ojo-devnet
+ojod init NODENAME --chain-id ojo-devnet
 ```
 ##### 4. Genesis and gas price
 ```sh
@@ -97,7 +97,7 @@ sudo systemctl restart ojod && sudo journalctl -u ojod -f
 sudo systemctl stop ojod
 ojod tendermint unsafe-reset-all --home $HOME/.ojo --keep-addr-book 
 
-STATE_SYNC_RPC="https://ojo-testnet.rpc.kjnodes.com:443"
+STATE_SYNC_RPC=""
 
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
 SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))
@@ -144,12 +144,12 @@ ojod tx staking create-validator \
 ### Useful command
 
 ##### Addrbook #####
-> if you have problev with peers
+> if you have problem with peers
 
 ```sh
 systemctl stop ojod
 rm $HOME/.ojo/config/addrbook.json
-wget -O $HOME/.ojo/config/addrbook.json ""
+wget -O $HOME/.ojo/config/addrbook.json "https://raw.githubusercontent.com/EnterStake/cosmosguides/main/Ojo/addrbook.json"
 sudo systemctl restart ojod && sudo journalctl -u ojod -f
 ```
 
