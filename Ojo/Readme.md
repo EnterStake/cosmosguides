@@ -181,6 +181,11 @@ ojod tx staking edit-validator \
 ```sh
 ojod tx distribution withdraw-all-rewards --from wallet --chain-id ojo-devnet --gas-prices 0.1uojo --gas-adjustment 1.5 --gas auto -y 
 ```
+##### Withdraw commission rewards
+```sh
+ojod tx distribution withdraw-rewards $(ojod keys show wallet --bech val -a) --commission --from wallet --chain-id ojo-devnet --gas-prices 0.1uojo --gas-adjustment 1.5 --gas auto -y 
+```
+
 ##### Wallet balance
 ```sh
 ojod q bank balances $(ojod keys show wallet -a)
@@ -189,7 +194,10 @@ Delegate 10ojo (edit ojovaloperxxxxxxx5467fhn06fr6aclrhncp to your valoper)
 ```sh 
 ojod tx staking delegate ojovaloperxxxxxxx5467fhn06fr6aclrhncp 10000000uojo --from wallet --chain-id ojo-devnet --gas-prices 0.1uojo --gas-adjustment 1.5 --gas auto -y 
 ```
-
+##### Voting 
+```sh
+ojod tx gov vote 1 yes --from wallet --chain-id ojo-devnet --gas-prices 0.1uojo --gas-adjustment 1.5 --gas auto -y 
+```
 ##### Check jail status
 ```sh
  ojod query staking validator $(ojod keys show wallet --bech val --address)
