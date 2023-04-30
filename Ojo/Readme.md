@@ -202,3 +202,5 @@ ojod tx gov vote 1 yes --from wallet --chain-id ojo-devnet --gas-prices 0.1uojo 
 ```sh
  ojod query staking validator $(ojod keys show wallet --bech val --address)
  ```
+##### Delete node
+sudo systemctl stop ojod && sudo systemctl disable ojod && sudo rm /etc/systemd/system/ojod.service && sudo systemctl daemon-reload && rm -rf $HOME/.ojo && rm -rf $HOME/ojo && sudo rm -rf $(which ojod) 
