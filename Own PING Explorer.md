@@ -1,9 +1,13 @@
+<p align="center">
+  <img height="100" height="auto" src="https://ping.pub/logo.svg">
+</p>
 
- Set up ping pub for your cosmos chains
+# Set up ping pub for your cosmos chains
 
-1. Update packages
-
+## 1. Update packages
+```
 sudo apt update && sudo apt upgrade -y
+```
 
 ## 2. Install nginx
 ```
