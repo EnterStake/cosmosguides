@@ -15,7 +15,7 @@ for (( ;; )); do
             echo -e "${GREEN}${JAIL} \n"
         else
             echo -e "${GREEN}${JAIL} \n"
-            echo -e $( echo "${PASWD}" | ${PROJECT} tx slashing unjail --chain-id ${CHAIN} --from ${ACC_NAME} --broadcast-mode block  -y) \n;
+            echo -e $( echo "${PASWD}" | ${PROJECT} tx slashing unjail --chain-id ${CHAIN} --from ${ACC_NAME} --gas-prices 0.1ugrain --gas-adjustment 1.5 --gas auto -y) \n;
             sleep 1
         fi
         for (( timer=${DELAY}; timer>0; timer-- ))
