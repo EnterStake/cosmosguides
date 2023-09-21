@@ -3,7 +3,7 @@
 ```
 chmod 700 auto_unjail.sh
 ```
-3. And then run the script
+3. And then run the script using tmux
 ```
-./auto_unjail.sh
+tmux new ./auto_unjail.sh
 ```
