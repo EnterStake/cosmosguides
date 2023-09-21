@@ -10,7 +10,7 @@ CHAIN=messenger
 PROJECT=palomad
 TOKEN_NAME=ugrain
 for (( ;; )); do
-        JAIL=$(${PROJECT} q staking validator $( echo "${PASWD}" | ${PROJECT} keys show ${ACC_NAME} --bech val -a) | grep jailed:);        
+        JAIL=$(${PROJECT} q staking validator $( echo "${PASWD}" | ${PROJECT} keys show ${ACC_NAME} --bech val -a) | grep jailed:);  
         if [[ ${JAIL} == *"false"* ]]; then
             echo -e "${GREEN}${JAIL} \n"
         else
